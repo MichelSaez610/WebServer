@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Data Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        #power,#name, #fSurname, #sSurname, #saldo, #type, #dni, #tel {
+            font-size: 48px;
+            padding: 20px;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #NFCID {
+            font-size: 48px;
+            padding: 20px;
+            border: 5px solid white;
+            border-radius: 10px;
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Fetching Live Data from the Loxone Miniserver</h1>
+</header>
+<main>
+    <div id="power">Current Power Draw: <span id="power-value"></span> kWh</div>
+    <div id="NFCID">Current NFC ID: <span id="NFCIDNumber"></span></div>
+    <div id="name">Current name: <span id="name-value"></span></div>
+    <div id="fSurname">Current fSurname: <span id="fSurname-value"></span></div>
+    <div id="sSurname">Current sSurname: <span id="sSurname-value"></span></div>
+    <div id="dni">Current dni: <span id="dni-value"></span></div>
+    <div id="saldo">Current saldo: <span id="saldo-value"></span></div>
+    <div id="type">Current type: <span id="type-value"></span></div>
+    <div id="tel">Current tel: <span id="tel-value"></span></div>
+</main>
+<footer>
+    <p>&copy; The Automation Gym</p>
+</footer>
+<script>
+    const apiUrl = 'http://localhost:3080/api/data';
+    const powerContainer = document.getElementById('power-value');
+    const NFCIDContainer = document.getElementById('NFCIDNumber');
+    const nameContainer = document.getElementById('name-value');
+    const fSurnameContainer = document.getElementById('fSurname-value');
+    const sSurnameContainer = document.getElementById('sSurname-value');
+    const dniContainer = document.getElementById('dni-value');
+    const saldoContainer = document.getElementById('saldo-value');
+    const typeContainer = document.getElementById('type-value');
+    const telContainer = document.getElementById('tel-value');
+
+    function updateElement(container, newValue) {
+        if (container.textContent !== newValue) {
+            container.textContent = newValue;
+            container.style.animation = 'pulse 1s';
+            setTimeout(() => {
+                container.style.animation = '';
+            }, 1000);
+        }
+    }
+
+    function fetchData() {
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                updateElement(powerContainer, data.power);
+                updateElement(NFCIDContainer, data.NFCID);
+                updateElement(nameContainer, data.name);
+                updateElement(fSurnameContainer, data.fSurname);
+                updateElement(sSurnameContainer, data.sSurname);
+                updateElement(dniContainer, data.dni);
+                updateElement(saldoContainer, data.saldo);
+                updateElement(typeContainer, data.type);
+                updateElement(telContainer, data.tel);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    // Fetch the initial data when the page loads
+    fetchData();
+
+    // Schedule updates every 5 seconds
+    setInterval(fetchData, 5000);
+</script>
+</body>
+</html>
