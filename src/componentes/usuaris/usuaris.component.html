@@ -1,0 +1,29 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>UID</th>
+      <th>Dni</th>
+      <th>Nom</th>
+      <th>Primer Cognom</th>
+      <th>Segon Cognom</th>
+      <th>Telefon</th>
+      <th>Tipus</th>
+      <th>Saldo</th>
+      <th>CargaMaxima</th>
+      <th>CargaRestant</th>
+    </tr>
+    <tr *ngFor="let row of rows">
+      <td>{{row.user_uid}}</td>
+      <td>{{row.user_dni}}</td>
+      <td>{{row.user_nom}}</td>
+      <td>{{row.user_cog1}}</td>
+      <td>{{row.user_cog2}}</td>
+      <td>{{row.user_tel}}</td>
+      <td>{{row.user_tipus}}</td>
+      <td>{{row.user_saldo}}</td>
+      <td>{{row.user_cargaMax}}</td>
+      <td>{{row.user_cargaRes}}</td>
+    </tr>
+  </table>
+</div>
+

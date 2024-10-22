@@ -1,0 +1,76 @@
+
+.form-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Encabezado del formulario */
+h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Estilos para cada grupo de formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Estilos para las etiquetas de formulario */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada de texto y select */
+input,
+select {
+  width: calc(100% - 3.5vmin); /* Ajusta el ancho para incluir el padding */
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+select {
+  width: 100%;
+}
+
+/* Estilos para el botón de envío */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+  opacity: 0.9;
+}
+
+/* Añadir un margen a los campos select para que no se vean más pequeños */
+select {
+  appearance: none; /* Elimina el estilo predeterminado del select en algunos navegadores */
+  -webkit-appearance: none; /* Estilo para navegadores WebKit */
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
