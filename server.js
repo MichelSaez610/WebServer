@@ -213,7 +213,7 @@ app.post('/cambiar-dades', async (req, res) => {
         dni: req.body.dni,
         saldo: req.body.saldo,
         type: req.body.type,
-        tel: req.body.tel   
+        tel: req.body.tel
     };
 
     console.log(clientData);
