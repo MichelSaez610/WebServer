@@ -4,8 +4,9 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #8d8d8d, #4c4c4c);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Sombra difusa grande */
+              0 6px 6px rgba(0, 0, 0, 0.15); /* Sombra más pequeña para el efecto flotante */
   color: #333;
   font-family: 'Arial', sans-serif;
 }
@@ -57,6 +58,31 @@ button {
   cursor: pointer;
   transition: background-color 0.3s, opacity 0.3s;
 }
+
+/* Contenedor para los campos con íconos */
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  font-size: 1.5rem; /* Make the icons larger */
+  color: #efad2d;       /* Adjust color for better visibility */
+}
+
+
+.input-icon input,
+.input-icon select {
+  padding-left: 2.5rem; /* Espacio para el ícono */
+}
+
+.input-icon select {
+  padding-left: 2.5rem; /* Espacio para íconos en select */
+}
+
 
 button:hover {
   background-color: #45a049;

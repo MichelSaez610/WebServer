@@ -3,8 +3,9 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #00ff77, #b300ff);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #cccccc, #838383); /* Cambiado a un fondo similar */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Sombra difusa grande */
+              0 6px 6px rgba(0, 0, 0, 0.15); /* Sombra más pequeña para el efecto flotante */
   color: #333;
   font-family: 'Arial', sans-serif;
 }
@@ -43,7 +44,7 @@ input {
 button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #4caf50;
+  background-color: #494848;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -55,4 +56,28 @@ button {
 button:hover {
   background-color: #45a049;
   opacity: 0.9;
+}
+
+/* Contenedor para los campos con íconos */
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  font-size: 1.5rem; /* Make the icons larger */
+  color: #efad2d;       /* Adjust color for better visibility */
+}
+
+
+.input-icon input,
+.input-icon select {
+  padding-left: 2.5rem; /* Espacio para el ícono */
+}
+
+.input-icon select {
+  padding-left: 2.5rem; /* Espacio para íconos en select */
 }

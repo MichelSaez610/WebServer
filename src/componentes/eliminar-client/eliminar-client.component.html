@@ -4,7 +4,10 @@
 
     <div class="form-group">
       <label for="UID">User ID</label>
-      <input id="UID" formControlName="uid" min="1001" max="1050" type="number" placeholder="User ID" required>
+      <div class="input-icon">
+        <i class="fa fa-user"></i>
+        <input id="UID" formControlName="uid" min="1001" max="1050" type="number" placeholder="User ID" required>
+      </div>
       <div *ngIf="deleteForm.get('uid')?.errors && (deleteForm.get('uid')?.touched || deleteForm.get('uid')?.dirty)">
         <small *ngIf="deleteForm.get('uid')?.errors?.['min']">User ID must be at least 1001.</small>
         <small *ngIf="deleteForm.get('uid')?.errors?.['max']">User ID cannot be more than 1050.</small>

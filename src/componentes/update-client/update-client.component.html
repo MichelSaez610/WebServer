@@ -1,0 +1,87 @@
+<div class="form-container">
+  <form [formGroup]="receptionForm" (ngSubmit)="onSubmit()">
+    <h2>Atualitzar Client</h2>
+
+    <div class="form-group">
+      <label for="UID">User ID</label>
+      <div class="input-icon">
+        <i class="fa fa-user"></i>
+        <input id="UID" formControlName="uid" min="1001" max="1050" type="number" placeholder="User ID" required>
+      </div>
+      <div *ngIf="receptionForm.get('uid')?.errors && (receptionForm.get('uid')?.touched || receptionForm.get('uid')?.dirty)">
+        <small *ngIf="receptionForm.get('uid')?.errors?.['min']">User ID ha de ser almenys 1001.</small>
+        <small *ngIf="receptionForm.get('uid')?.errors?.['max']">User ID no pot ser mayor a 1050.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <div class="input-icon">
+        <i class="fa fa-user-circle"></i>
+        <input id="Nom" formControlName="nom" type="text" placeholder="Nom" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="PrimerCognom">Primer Cognom</label>
+      <div class="input-icon">
+        <i class="fa-regular fa-user"></i>
+        <input id="PrimerCognom" formControlName="primerCognom" type="text" placeholder="Primer Cognom" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="SegonCognom">Segon Cognom</label>
+      <div class="input-icon">
+        <i class="fa fa-id-card-alt"></i>
+        <input id="SegonCognom" formControlName="segonCognom" type="text" placeholder="Segon Cognom" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dni">DNI</label>
+      <div class="input-icon">
+        <i class="fa fa-id-card"></i>
+        <input id="dni" formControlName="dni" type="text" maxlength="9" placeholder="DNI" required>
+      </div>
+      <div *ngIf="receptionForm.get('dni')?.invalid && receptionForm.get('dni')?.touched">
+        <small *ngIf="receptionForm.get('dni')?.errors?.['required']">DNI es requerit.</small>
+        <small *ngIf="receptionForm.get('dni')?.errors?.['pattern']">DNI ha de ser 8 digits seguits d'una lletra mayúscula.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="saldo">Saldo</label>
+      <div class="input-icon">
+        <i class="fa fa-wallet"></i>
+        <input id="saldo" formControlName="saldo" type="number" placeholder="Saldo" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Tipus">Tipus</label>
+      <div class="input-icon">
+        <i class="fa fa-car"></i>
+        <select id="Tipus" formControlName="tipus" required>
+          <option selected value="">Seleccionar</option>
+          <option value="hibrido">Hibrid</option>
+          <option value="electrico">Electric</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Telefon">Teléfono</label>
+      <div class="input-icon">
+        <i class="fa fa-phone"></i>
+        <input id="Telefon" formControlName="telefon" maxlength="9" type="tel" placeholder="Telefon" required>
+      </div>
+      <div *ngIf="receptionForm.get('Telefon')?.invalid && receptionForm.get('Telefon')?.touched">
+        <small *ngIf="receptionForm.get('Telefon')?.errors?.['required']">Telefon es requerit.</small>
+        <small *ngIf="receptionForm.get('Telefon')?.errors?.['pattern']">Telefon pot contenir nomes numeros.</small>
+      </div>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>

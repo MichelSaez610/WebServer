@@ -1,8 +1,9 @@
 <div class="container">
+  <button (click)="reloadTable()">Actualitzar Taula</button>
   <table>
     <tr>
       <th>UID</th>
-      <th>Dni</th>
+      <th>DNI</th>
       <th>Nom</th>
       <th>Primer Cognom</th>
       <th>Segon Cognom</th>
@@ -20,9 +21,9 @@
       <td>{{row.user_cog2}}</td>
       <td>{{row.user_tel}}</td>
       <td>{{row.user_tipus}}</td>
-      <td>{{row.user_saldo}}</td>
-      <td>{{row.user_cargaMax}}</td>
-      <td>{{row.user_cargaRes}}</td>
+      <td>{{row.user_saldo}}€</td>
+      <td>{{row.user_cargaMax}}kWh</td>
+      <td>{{row.user_cargaRes}}kWh</td>
     </tr>
   </table>
 </div>

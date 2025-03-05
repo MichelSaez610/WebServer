@@ -16,7 +16,7 @@ ul, li {
 
 .topnav {
   overflow: hidden;
-  background: linear-gradient(80deg, #cfb0eb, #73b5f7);
+  background: linear-gradient(80deg, #c9c5ce, #253749);
   background-color: #333;
   width: 98.7%;
   margin-left: -0.5rem;
@@ -33,12 +33,12 @@ ul, li {
 }
 
 .topnav a:hover {
-  background-color: #a482b4b1;
+  background-color: #adadadb1;
   color: black;
 }
 
 .topnav a.active {
-  background-color: #8d19f43f;
+  background-color: #342d3a3f;
   color: white;
 }
 

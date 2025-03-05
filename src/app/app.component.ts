@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "../componentes/header/header.component";
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,12 @@ import { HeaderComponent } from "../componentes/header/header.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pruebaWeb';
+  title = 'LoxoneWebServer';
+
+  constructor(private titleService: Title) { }
+
+  ngOnInit() {
+    // Set the default title for all pages
+    this.titleService.setTitle(this.title);
+  }
 }

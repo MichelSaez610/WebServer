@@ -1,0 +1,89 @@
+.form-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #a5a5a5, #6b6b6be8); /* Cambiado a un fondo similar */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Sombra difusa grande */
+                0 6px 6px rgba(0, 0, 0, 0.15); /* Sombra más pequeña para el efecto flotante */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Encabezado del formulario */
+  h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  /* Estilos para cada grupo de formulario */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Estilos para las etiquetas de formulario */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los campos de entrada de texto */
+  input {
+    width: calc(100% - 3.5vmin);
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+  }
+  
+  /* Estilos para el botón de envío */
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color:#e24332;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+    opacity: 0.9;
+  }
+  
+  /* Contenedor para los campos con íconos */
+  .input-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .input-icon i {
+    position: absolute;
+    left: 10px;
+    font-size: 1.5rem; /* Make the icons larger */
+    color: #efad2d;       /* Adjust color for better visibility */
+  }
+  
+  
+  .input-icon input,
+  .input-icon select {
+    padding-left: 2.5rem; /* Espacio para el ícono */
+  }
+  
+  .input-icon select {
+    padding-left: 2.5rem; /* Espacio para íconos en select */
+  }
+
+  .error-message {
+    color: rgb(179, 1, 1);
+    margin-top: 10px;
+  }
+  

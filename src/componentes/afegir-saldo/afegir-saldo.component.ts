@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { AuthServiceService } from '../services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-afegir-saldo',
@@ -13,14 +15,12 @@ import { CommonModule } from '@angular/common';
 export class AfegirSaldoComponent {
   saldoForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthServiceService, private router: Router) {
     this.saldoForm = this.fb.group({
       uid: [null, [Validators.required, Validators.min(1001), Validators.max(1050)]],
       saldo: [null, [Validators.required, Validators.min(0)]], // Ensure saldo is non-negative
     });
   }
-
-  ngOnInit(): void {}
 
   onSubmit() {
     if (this.saldoForm.valid) {
@@ -50,6 +50,6 @@ export class AfegirSaldoComponent {
       error => {
         console.error('Error updating saldo', error);
       }
-    );
+    ); 
   }
 }

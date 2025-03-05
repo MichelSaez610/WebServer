@@ -1,0 +1,24 @@
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Log in</h2>
+
+    <div class="form-group">
+      <label for="usuari">Usuari</label>
+      <div class="input-icon">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="usuari" placeholder="Nom d'usuari" formControlName="usuari" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contrasenya">Contrasenya</label>
+      <div class="input-icon">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="contrasenya" placeholder="Contrasenya" formControlName="contrasenya" required>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <button type="submit" [disabled]="loginForm.invalid">Iniciar Sessió</button>
+  </form>
+</div>

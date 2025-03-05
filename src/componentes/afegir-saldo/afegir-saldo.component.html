@@ -4,7 +4,10 @@
 
     <div class="form-group">
       <label for="UID">User ID</label>
-      <input id="UID" formControlName="uid" min="1001" max="1050" type="number" placeholder="User ID" required>
+      <div class="input-icon">
+        <i class="fa fa-user"></i>
+        <input id="UID" formControlName="uid" min="1001" max="1050" type="number" placeholder="User ID" required>
+      </div>
       <div *ngIf="saldoForm.get('uid')?.errors && (saldoForm.get('uid')?.touched || saldoForm.get('uid')?.dirty)">
         <small *ngIf="saldoForm.get('uid')?.errors?.['min']">User ID must be at least 1001.</small>
         <small *ngIf="saldoForm.get('uid')?.errors?.['max']">User ID cannot be more than 1050.</small>
@@ -13,13 +16,16 @@
 
     <div class="form-group">
       <label for="saldo">Saldo</label>
-      <input id="saldo" formControlName="saldo" type="number" placeholder="Saldo" required>
+      <div class="input-icon">
+        <i class="fa fa-wallet"></i>
+        <input id="saldo" formControlName="saldo" type="number" placeholder="Saldo" required>
+      </div>
       <div *ngIf="saldoForm.get('saldo')?.errors && (saldoForm.get('saldo')?.touched || saldoForm.get('saldo')?.dirty)">
         <small *ngIf="saldoForm.get('saldo')?.errors?.['required']">Saldo is required.</small>
         <small *ngIf="saldoForm.get('saldo')?.errors?.['min']">Saldo must be non-negative.</small>
       </div>
     </div>
 
-    <button type="submit">Actualizar Saldo</button>
+    <button type="submit">Actualitzar Saldo</button>
   </form>
 </div>

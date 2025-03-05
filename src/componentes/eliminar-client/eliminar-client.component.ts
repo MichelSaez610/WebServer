@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
 import { CommonModule } from '@angular/common';
+import { AuthServiceService } from '../services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-eliminar-client',
@@ -13,13 +15,11 @@ import { CommonModule } from '@angular/common';
 export class EliminarClientComponent {
   deleteForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: ServiceService) {
+  constructor(private fb: FormBuilder, private service: ServiceService, private authService: AuthServiceService, private router: Router) {
     this.deleteForm = this.fb.group({
       uid: [null, [Validators.required, Validators.min(1001), Validators.max(1050)]],
     });
   }
-
-  ngOnInit(): void {}
 
   onSubmit() {
     if (this.deleteForm.valid) {
@@ -33,12 +33,18 @@ export class EliminarClientComponent {
         return; // Exit the function if the validation fails
       }
 
-      this.service.resetUser(uid).subscribe(response => {
-        console.log('User reset to default values', response);
-      });
+      this.service.resetUser(uid).subscribe(
+        response => {
+          console.log('User reset to default values', response);
+        },
+        error => {
+          console.error('Error resetting user:', error);
+        }
+      );
       this.deleteForm.reset();
     } else {
       console.log('Form is invalid');
     }
   }
 }
+

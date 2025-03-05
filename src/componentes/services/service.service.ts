@@ -1,7 +1,7 @@
 import { Component, Injectable } from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -40,6 +40,12 @@ export class ServiceService {
   }
 
   getUserData(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/userData`);
+    return this.http.get<any[]>(`${this.apiUrl}/userData`).pipe(
+      catchError(error => {
+        console.error('Error fetching user data', error);
+        return throwError(error);
+      })
+    );
   }
+  
 }
