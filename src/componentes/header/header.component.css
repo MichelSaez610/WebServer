@@ -70,6 +70,7 @@ nav {
   color: rgb(255, 255, 255);
   border-radius: 10px;
   text-shadow: -1px -1px 0 #0000009d, 1px -1px 0 #0000009d, -1px 1px 0 #0000009d, 1px 1px 0 #0000009d;
+  background-color: #00000009;
 }
 
 
