@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -14,33 +16,63 @@ ul, li {
   text-decoration: none;
 }
 
+
+img {
+  width: 100px;
+}
+
+nav {
+  width: 98%;
+  margin-left: -20px;
+  margin-top: -10px;
+}
+
 .topnav {
-  overflow: hidden;
-  background: linear-gradient(80deg, #c9c5ce, #253749);
+  display: flex;
+  justify-content: space-between; /* Space out logo and links */
+  align-items: center; /* Vertically center items */
+  background: linear-gradient(60deg, #c9c5ce, #ffffff);
   background-color: #333;
-  width: 98.7%;
-  margin-left: -0.5rem;
-  margin-top: -0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 2rem; /* Adjust padding to create space */
+}
+
+.logo-list {
+  display: flex;
+  justify-content: center; /* Center logo within its container */
+  align-items: center;
+}
+
+.links-list {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
 }
 
 .topnav a {
-  float: right;
-  color: #f2f2f2;
+  color: #000000;
   text-align: center;
   padding: 1rem 2rem;
   text-decoration: none;
   font-size: 17px;
+  font-weight: 600;
 }
 
 .topnav a:hover {
   background-color: #adadadb1;
   color: black;
+  border-radius: 10px;
 }
 
 .topnav a.active {
-  background-color: #342d3a3f;
-  color: white;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-shadow: -1px -1px 0 #0000009d, 1px -1px 0 #0000009d, -1px 1px 0 #0000009d, 1px 1px 0 #0000009d;
 }
+
+
 
 .clearfix::after {
   content: "";

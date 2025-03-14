@@ -3,7 +3,7 @@
   margin: 2rem auto;
   padding: 2rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #a5a5a5, #6b6b6be8); /* Cambiado a un fondo similar */
+  background: linear-gradient(135deg, #eba61b, #d39518);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Sombra difusa grande */
               0 6px 6px rgba(0, 0, 0, 0.15); /* Sombra más pequeña para el efecto flotante */
   color: #333;
@@ -69,7 +69,7 @@ button:hover {
   position: absolute;
   left: 10px;
   font-size: 1.5rem; /* Make the icons larger */
-  color: #efad2d;       /* Adjust color for better visibility */
+  color: #8d8d8d;       /* Adjust color for better visibility */
 }
 
 

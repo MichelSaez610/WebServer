@@ -19,8 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
-      idEmpresa: ['', Validators.required],
-      nomEmpresa: ['', Validators.required],
+      usuari: ['', Validators.required],
       contrasenya: ['', [Validators.required, Validators.minLength(6)]]
     });
   }

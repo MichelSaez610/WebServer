@@ -3,7 +3,7 @@
   margin: 2rem auto;
   padding: 3rem;
   border-radius: 10px;
-  background: linear-gradient(135deg, #cccccc, #838383);
+  background: linear-gradient(135deg, #eba61b, #d39518);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), /* Sombra difusa grande */
               0 6px 6px rgba(0, 0, 0, 0.15); /* Sombra más pequeña para el efecto flotante */
   color: #333;
@@ -16,10 +16,17 @@ button {
   margin-right: 47%;
   width: max-content;
   padding: 1%;
-  background-color: #efad2d;
-  color: #333;
-  font-weight: 800;
+  background-color: #6e6e6e;
+  color: #ffffff;
+  font-weight: 600;
   border-radius: 10px;
+  border-width: 3px;
+  border-color: #ffffff;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: 500ms;
 }
 
 table {

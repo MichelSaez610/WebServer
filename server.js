@@ -26,7 +26,7 @@ connection.connect((err) => {
 });
 
 // Para la autenticación: usuario admin con contraseña "15j792kh"
-const adminUsername = 'admin';
+const adminUsername = 'fabregas';
 const adminHashedPassword = hashPassword('15j792kh');
 
 const authString = Buffer.from('admin:15j792kh').toString('base64'); // Para peticiones a los endpoints de Loxone
